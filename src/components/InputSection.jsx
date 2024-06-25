@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
-import TimeModal from "./TimeModal";
-import TimeSelection from "./TimeSelection";
+import React, { useState, useEffect, useRef } from "react";
 import AlertModal from "./AlertModal";
 
 const InputSection = () => {

@@ -1,17 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const AlertModal = ({ data, time, date }) => {
+  //useState variable to set the modal status
   const [showModal, setShowModal] = useState(false);
+  //useState variable to set the alert task name
   const [taskName, setTaskName] = useState("");
 
   useEffect(() => {
-    const matchedItem = data.find(item => item.alerttime === time && item.alertdate === date);
+    const matchedItem = data.find(
+      (item) => item.alerttime === time && item.alertdate === date
+    );
     if (matchedItem) {
       setShowModal(true);
-      setTaskName(matchedItem.task); // Assuming 'taskName' is the property you want to display
-    } 
+    //   setting the alert task name
+      setTaskName(matchedItem.task); 
+    }
   }, [data, time, date]);
-
+  
+//   function to close the modal
   const handleClose = () => {
     setShowModal(false);
   };

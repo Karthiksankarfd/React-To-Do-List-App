@@ -1,88 +1,20 @@
-/* Container for the task manager */
-.container_main {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-}
-
-/* Input fields */
-input[type="text"],
-input[type="date"] ,
-input[type="time"]
-{
-  width: calc(50% - 10px);
-  padding: 10px;
-  margin: 10px 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-/* Button styles */
-button {
-  padding: 10px 15px;
-  margin: 10px 5px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Task list */
-ul {
-  list-style-type: none;
+html, body {
+  height: 100%;
+  margin: 0;
   padding: 0;
 }
-
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  font-size: 18px;
+#root{
+  height:100%;
 }
 
-li:last-child {
-  border-bottom: none;
+/* Combine all input types with the ::placeholder pseudo-element */
+input[type="text"]::placeholder,
+input[type="date"]::placeholder,
+input[type="time"]::placeholder {
+  color: white;
 }
 
-li span {
-  flex-grow: 1;
-}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url("C:\Users\karthikeyansankar\Downloads\logoaxis.png") no-repeat;
 
-li button {
-  background-color: #dc3545;
-}
-
-li button:last-child {
-  background-color: #28a745;
-}
-
-li button:hover {
-  background-color: #c82333;
-}
-
-li button:last-child:hover {
-  background-color: #218838;
-}
-
-/* Task status colors */
-li span[style*="color: RED"] {
-  color: red;
-}
-
-li span[style*="color: GREEN"] {
-  color: green;
 }

@@ -130,38 +130,55 @@ const InputSection = () => {
 
   return (
     <>
-      <div className="container_main">
+   
+      <div className="container_main h-auto border-blue-600 border-2 rounded-lg w-4/5  m-auto p-5">
+  
         {/* Input field for adding the task */}
-        <input
-          type="text"
-          placeholder="Add New Task"
-          value={Task}
-          onChange={handleInputTask}
-        />
-        <input
-          type="date"
-          placeholder="Add New Task"
-          value={date}
-          onChange={datePicker}
-        />
-        <input
-          type="time"
-          placeholder="Add New Task"
-          value={time}
-          onChange={timePicker}
-        />
-    
-        <button onClick={addTaskbtn}>Add Task</button>
-        <ul>
+        <div className="input_sections flex justify-center ">
+          <input
+            className="border-blue-600 border-2 rounded-lg w-1/4 bg-transparent text-white mr-6 py-2"
+            type="text"
+            placeholder="Add New Task"
+            value={Task}
+            onChange={handleInputTask}
+          />
+          <input
+            className="border-blue-600 border-2 rounded-lg w-1/4 bg-transparent text-white mr-6 py-2"
+            type="date"
+            placeholder="Add New Task"
+            value={date}
+            onChange={datePicker}
+          />
+          <input
+            className="border-blue-600 border-2 rounded-lg w-1/4 bg-transparent text-white py-2"
+            type="time"
+            placeholder="Add New Task"
+            value={time}
+            onChange={timePicker}
+          />
+        </div>
+         {/* add to task button */}
+        <div className="flex items-center mt-5">
+          <button onClick={addTaskbtn} 
+          className="bg-blue-600 text-white px-10 py-2 m-auto rounded-lg">Add Task</button>
+        </div>
+      </div>
+      {/*  */}
+      <ul className="w-4/5 m-auto mt-5">
           {TaskList.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className=" bg-gray-700 w-full flex justify-around mb-5 py-2 "> 
               <span style={{ color: item.taskstatusPending ? "RED" : "GREEN" }}>
                 {item.task}
               </span>
               {/* <span> - {item.time}</span> */}
-              <span> AlertDate - {item.alertdate}</span>
-              <button onClick={() => taskDeletebtn(item.id)}>Delete</button>
-              <button onClick={() => addToPendingList(item.id)}>
+              <span className="text-white"> AlertDate - {item.alertdate}</span>
+              <button
+                onClick={() => taskDeletebtn(item.id)}
+                className="text-white"
+              >
+                Delete
+              </button>
+              <button onClick={() => addToPendingList(item.id)} className="text-white">
                 {item.taskstatusPending
                   ? "Mark as Completed"
                   : "Mark as Pending"}
@@ -169,8 +186,7 @@ const InputSection = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <AlertModal data = {TaskList} date ={formattedDate} time ={thecurrentDate}/>
+      <AlertModal data={TaskList} date={formattedDate} time={thecurrentDate} />
     </>
   );
 };

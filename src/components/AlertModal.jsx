@@ -23,16 +23,16 @@ const AlertModal = ({ data, time, date }) => {
   };
 
   return (
-    <div>
+    <div className="w-1/3 bg-slate-800 h-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       {showModal ? (
-        <div className="modal">
+        <div className="modal w-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1>Alert</h1>
           <p>Task: {taskName}</p>
           <button onClick={handleClose}>Close</button>
         </div>
       ) : (
-        <div className="no-alert">
-          <h1>No alert to show</h1>
+        <div className="no-alert w-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h1 className="text-red-600">No alert to show</h1>
         </div>
       )}
     </div>
